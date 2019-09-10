@@ -33,6 +33,7 @@ class CatCreate(CreateView):
 class CatUpdate(UpdateView):
     model = Cat
     # Let's disallow the renaming of a cat by excluding the name field!
+    # fields = '__all__'
     fields = ['breed', 'description', 'age']
 
 
