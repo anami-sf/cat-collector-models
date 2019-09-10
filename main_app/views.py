@@ -1,13 +1,10 @@
 from django.shortcuts import render
-from django.views.generic import ListView
 from .models import Cat
-
-# View functions
-
+#from django.views.generic import ListView
+from django.views.generic.edit import CreateView
 
 # class CatList(ListView):
 #     model = Cat
-
 
 def home(request):
     return render(request, 'home.html')
@@ -25,3 +22,10 @@ def cats_index(request):
 def cats_detail(request, cat_id):
     cat = Cat.objects.get(id=cat_id)
     return render(request, 'cats/detail.html', {'cat': cat})
+
+
+# Will display a template with user input form to create a new cat
+class CatCreate(CreateView):
+    model = Cat
+    fields = ['name', 'breed', 'description', 'age']
+    # fields = '__all__'  same as ^^^
