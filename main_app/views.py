@@ -1,7 +1,12 @@
 from django.shortcuts import render
+from django.views.generic import ListView
 from .models import Cat
 
 # View functions
+
+
+class CatList(ListView):
+    model = Cat
 
 
 def home(request):
