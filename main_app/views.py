@@ -5,8 +5,8 @@ from .models import Cat
 # View functions
 
 
-class CatList(ListView):
-    model = Cat
+# class CatList(ListView):
+#     model = Cat
 
 
 def home(request):
