@@ -28,6 +28,10 @@ class CatCreate(CreateView):
     model = Cat
     fields = ['name', 'breed', 'description', 'age']
     # fields = '__all__'  same as ^^^
+    # success_url = '/cats/'
+    # line above ^^^ was moved to models instead
+        # def get_absolute_url(self):
+        # return reverse('detail', kwargs={'cat_id': self.id})
 
 
 class CatUpdate(UpdateView):
@@ -40,3 +44,5 @@ class CatUpdate(UpdateView):
 class CatDelete(DeleteView):
     model = Cat
     success_url = '/cats/'
+    # def get_absolute_url(self):
+    # return reverse('detail', kwargs={'cat_id': self.id})
